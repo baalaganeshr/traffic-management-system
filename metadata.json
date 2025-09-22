@@ -1,0 +1,5 @@
+{
+  "name": "Smart Traffic Management System",
+  "description": "An AI-powered dashboard for real-time traffic monitoring, autonomous signal control, and predictive analytics. This application provides a sophisticated interface for city planners and operators to manage urban traffic flow efficiently.",
+  "requestFramePermissions": []
+}
