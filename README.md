@@ -2,6 +2,12 @@
 
 A modern, responsive web application for intelligent traffic monitoring and control. Built with React, TypeScript, and Vite for optimal performance and developer experience.
 
+## 🌐 Live Demo
+
+**[View Live Application →](https://baalaganeshr.github.io/traffic-management-system/)**
+
+Experience the Smart Traffic Management System in action!
+
 ## ✨ Features
 
 - **Real-time Traffic Monitoring** - Live dashboard with traffic flow analytics
@@ -55,6 +61,27 @@ A modern, responsive web application for intelligent traffic monitoring and cont
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
+- `npm run deploy` - Deploy to GitHub Pages (requires gh-pages package)
+
+## 🚀 Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `master` branch triggers a new deployment.
+
+### Manual Deployment
+```bash
+# Install gh-pages if not already installed
+npm install --save-dev gh-pages
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+### Automatic Deployment
+The project uses GitHub Actions for continuous deployment:
+- **Trigger**: Push to `master` branch
+- **Build**: Automated with Node.js 18
+- **Deploy**: Direct to GitHub Pages
+- **URL**: https://baalaganeshr.github.io/traffic-management-system/
 
 ## 🏗️ Project Structure
 
