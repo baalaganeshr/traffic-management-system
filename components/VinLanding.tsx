@@ -8,9 +8,7 @@ const VinLanding: React.FC = () => {
     navigate('/dashboard');
   };
 
-  const handleDemoClick = () => {
-    navigate('/dashboard');
-  };
+
 
   // Cursor glow animation
   useEffect(() => {
@@ -817,9 +815,6 @@ const VinLanding: React.FC = () => {
               <div className="hero__actions">
                 <button className="btn btn--primary" onClick={handleDashboardClick}>
                   Open VIN Dashboard
-                </button>
-                <button className="btn btn--primary" onClick={handleDemoClick}>
-                  Try Live Demo
                 </button>
                 <a className="btn btn--ghost" href="#capabilities">Explore capabilities</a>
               </div>
