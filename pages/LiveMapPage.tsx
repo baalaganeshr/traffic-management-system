@@ -39,7 +39,7 @@ const LiveMapPage: React.FC<LiveMapPageProps> = ({ intersections, incidents }) =
               onOpenTrafficLightModal={() => setTrafficLightModalOpen(true)}
             />
           ) : (
-            <div className="flex items-center justify-center h-48 bg-navy-800/70 border border-navy-700 rounded-xl text-slate-400">
+            <div className="flex items-center justify-center h-48 bg-slate-800/70 border border-slate-700 rounded-xl text-slate-400">
               <p>Select an intersection to view controls.</p>
             </div>
           )}
