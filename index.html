@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Traffic Management System</title>
+    <title>VIN Traffic System - Smart Traffic Management</title>
+    <script>
+      // Handle GitHub Pages SPA routing
+      (function() {
+        const redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          if (redirect !== '/') {
+            window.history.replaceState(null, null, redirect);
+          }
+        }
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
