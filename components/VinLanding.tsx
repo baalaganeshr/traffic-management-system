@@ -26,6 +26,14 @@ const VinLanding: React.FC = () => {
     return () => document.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Mobile navigation toggle
+  const toggleMobileNav = () => {
+    const navLinks = document.getElementById('nav-links');
+    if (navLinks) {
+      navLinks.classList.toggle('active');
+    }
+  };
+
   return (
     <div className="vin-landing">
       {/* Cursor glow effect */}
@@ -100,6 +108,24 @@ const VinLanding: React.FC = () => {
           display: flex;
           align-items: center;
           gap: 2rem;
+        }
+
+        .nav__toggle {
+          display: none;
+          flex-direction: column;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+        }
+
+        .nav__toggle span {
+          width: 25px;
+          height: 3px;
+          background: #fff;
+          margin: 3px 0;
+          transition: 0.3s;
+          border-radius: 2px;
         }
 
         .nav__links a {
@@ -493,11 +519,47 @@ const VinLanding: React.FC = () => {
           .section h2 {
             font-size: 2.4rem;
           }
+
+          .container {
+            padding: 0 15px;
+          }
         }
 
         @media (max-width: 768px) {
+          .nav__toggle {
+            display: flex;
+          }
+
+          .nav__links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 20px;
+            gap: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+          }
+
+          .nav__links.active {
+            display: flex;
+          }
+
+          .hero {
+            padding: 100px 0 60px;
+          }
+
           .hero h1 {
             font-size: 2.8rem;
+            line-height: 1.2;
+          }
+
+          .hero__lead {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
           }
 
           .hero__actions {
@@ -506,8 +568,20 @@ const VinLanding: React.FC = () => {
             gap: 1rem;
           }
 
+          .btn {
+            width: 100%;
+            max-width: 280px;
+            padding: 14px 24px;
+            font-size: 1rem;
+          }
+
           .hero__stats {
             text-align: center;
+            gap: 1rem;
+          }
+
+          .hero__aside {
+            padding: 2rem 1.5rem;
           }
 
           .cta__inner {
@@ -516,14 +590,20 @@ const VinLanding: React.FC = () => {
             gap: 2rem;
           }
 
+          .cta__actions {
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .cta__actions .btn {
+            width: 100%;
+            max-width: 280px;
+          }
+
           .footer__inner {
             flex-direction: column;
             gap: 1rem;
             text-align: center;
-          }
-
-          .nav__links {
-            gap: 1rem;
           }
 
           .section {
@@ -533,24 +613,170 @@ const VinLanding: React.FC = () => {
           .section h2 {
             font-size: 2rem;
           }
+
+          .section__lead {
+            font-size: 1.1rem;
+          }
+
+          .grid {
+            gap: 1.5rem;
+          }
+
+          .card {
+            padding: 2rem 1.5rem;
+          }
+
+          .steps li {
+            padding: 2rem 1.5rem;
+          }
+
+          .container {
+            padding: 0 20px;
+          }
         }
 
         @media (max-width: 480px) {
           .hero {
-            padding: 100px 0 60px;
+            padding: 90px 0 50px;
           }
 
           .hero h1 {
             font-size: 2.2rem;
+            margin-bottom: 1.5rem;
           }
 
           .hero__lead {
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+          }
+
+          .eyebrow {
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
           }
 
           .btn {
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+          }
+
+          .section {
+            padding: 50px 0;
+          }
+
+          .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+          }
+
+          .section__lead {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+          }
+
+          .hero__aside {
+            padding: 1.5rem;
+          }
+
+          .hero__aside h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+          }
+
+          .card {
+            padding: 1.5rem;
+          }
+
+          .card h3 {
+            font-size: 1.2rem;
+          }
+
+          .steps li {
+            padding: 1.5rem;
+          }
+
+          .steps span {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .nav__inner {
+            height: 64px;
+          }
+
+          .brand {
+            font-size: 1.3rem;
+          }
+
+          .container {
+            padding: 0 15px;
+          }
+
+          /* Touch-friendly cursor glow for mobile */
+          .cursor-glow {
+            display: none;
+          }
+
+          /* Mobile-specific animations */
+          .card:hover {
+            transform: translateY(-3px);
+          }
+
+          .btn:hover {
+            transform: translateY(-1px);
+          }
+        }
+
+        @media (max-width: 360px) {
+          .hero h1 {
+            font-size: 2rem;
+          }
+
+          .hero__lead {
+            font-size: 1rem;
+          }
+
+          .section h2 {
+            font-size: 1.6rem;
+          }
+
+          .container {
+            padding: 0 12px;
+          }
+
+          .hero__aside {
+            padding: 1.2rem;
+          }
+
+          .card {
+            padding: 1.2rem;
+          }
+
+          .steps li {
+            padding: 1.2rem;
+          }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+          .cursor-glow {
+            display: none !important;
+          }
+
+          .btn:hover {
+            transform: none;
+          }
+
+          .card:hover {
+            transform: none;
+          }
+
+          .btn:active {
+            transform: scale(0.98);
+          }
+
+          .card:active {
+            transform: scale(0.98);
           }
         }
       `}</style>
@@ -558,7 +784,16 @@ const VinLanding: React.FC = () => {
       <header className="nav">
         <div className="container nav__inner">
           <a className="brand" href="#top">VIN Traffic System</a>
-          <nav className="nav__links">
+          <button 
+            className="nav__toggle" 
+            onClick={toggleMobileNav}
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav id="nav-links" className="nav__links">
             <a href="#mission">Mission</a>
             <a href="#capabilities">Capabilities</a>
             <a href="#workflow">Workflow</a>
